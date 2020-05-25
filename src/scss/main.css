@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+body {
+  font-family: "Open Sans";
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+.w-container-fluid {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.w-full-page {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.w-bg-gray {
+  background-color: #f5f5f5;
+}
+
+.w-container {
+  width: 400px;
+  min-height: 750px;
+  -webkit-box-shadow: 0px 0px 29px 9px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 29px 9px rgba(0, 0, 0, 0.2);
+}
+
+.w-h1 {
+  font-weight: 600;
+  font-size: 36px;
+  color: #388b3b;
+}
+
+.w-form-container {
+  padding: 20px;
+}
+
+.w-tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.w-tabs .w-tab-item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+}
+
+.w-tabs .w-tab-item a {
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #4CAF50;
+  font-weight: 600;
+}
+
+.w-tabs .w-tab-item a.active {
+  background-color: #388b3b;
+}
+
+.w-tabs-content {
+  padding: 20px;
+  display: none;
+}
+
+.w-tabs-content.active {
+  display: block;
+}
+
+.w-form .w-form-control {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.w-form .w-form-control input {
+  height: 50px;
+  width: 100%;
+  position: relative;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  z-index: 10;
+}
+
+.w-form .w-form-control input:focus ~ label {
+  color: #9d9d9d;
+  -webkit-transform: translate(-12%, -50%) scale(0.75);
+          transform: translate(-12%, -50%) scale(0.75);
+}
+
+.w-form .w-form-control input:focus ~ .process::after, .w-form .w-form-control input:focus ~ .process::before {
+  width: 50%;
+}
+
+.w-form .w-form-control input:valid ~ label {
+  color: #9d9d9d;
+  -webkit-transform: translate(-12%, -50%) scale(0.75);
+          transform: translate(-12%, -50%) scale(0.75);
+}
+
+.w-form .w-form-control label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #424242;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 50px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.w-form .w-form-control .process {
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #424242;
+}
+
+.w-form .w-form-control .process::after, .w-form .w-form-control .process::before {
+  content: '';
+  height: 2px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  background-color: #4CAF50;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.w-form .w-form-control .process::after {
+  right: 50%;
+}
+
+.w-form .w-form-control .process::before {
+  left: 50%;
+}
+
+.w-form .w-form-control .error {
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+  font-style: italic;
+  color: #FF5252;
+  visibility: hidden;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  opacity: 0;
+}
+
+.w-form .w-form-control .error.active {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+}
+
+.w-form .w-form-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.w-btn {
+  display: inline-block;
+  padding: 8px 36px;
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.w-btn--success {
+  background: #388b3b;
+}
+
+.w-btn:hover {
+  -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+/*# sourceMappingURL=main.css.map */

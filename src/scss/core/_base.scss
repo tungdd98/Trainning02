@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+body {
+  font-family: $font;
+  font-size: $font-base;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+.w-container-fluid {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.w-full-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.w-bg-gray {
+  background-color: $gray-light;
+}
+
+.w-container {
+  width: 400px;
+  min-height: 750px;
+  -webkit-box-shadow: 0px 0px 29px 9px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 29px 9px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 29px 9px rgba(0, 0, 0, 0.2);
+}
+
+.w-h1 {
+  font-weight: 600;
+  font-size: $font-large*2;
+  color: $success-darker;
+}
+
+.w-form-container {
+  padding: 20px;
+}
+
+.w-tabs {
+  display: flex;
+
+  .w-tab-item {
+    flex: 0 0 50%;
+
+    a {
+      display: block;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $white;
+      background-color: $success;
+      font-weight: 600;
+
+      &.active {
+        background-color: $success-darker;
+      }
+    }
+  }
+}
+
+.w-tabs-content {
+  padding: 20px;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.w-form {
+  .w-form-control {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    input {
+      height: 50px;
+      width: 100%;
+      position: relative;
+      background: none;
+      outline: none;
+      border: none;
+      font-size: $font-large;
+      z-index: 10;
+
+      &:focus~label {
+        color: $gray-dark;
+        transform: translate(-12%, -50%) scale(0.75);
+      }
+
+      &:focus~.process {
+
+        &::after,
+        &::before {
+          width: 50%;
+        }
+      }
+
+      &:valid~label {
+        color: $gray-dark;
+        transform: translate(-12%, -50%) scale(0.75);
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: $secondary;
+      font-weight: 300;
+      font-size: $font-large;
+      line-height: 50px;
+      transition: all .2s ease-in-out;
+    }
+
+    .process {
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: $secondary;
+
+      &::after,
+      &::before {
+        content: '';
+        height: 2px;
+        width: 0;
+        position: absolute;
+        bottom: 0;
+        background-color: $success;
+        transition: all .2s ease-in-out;
+      }
+
+      &::after {
+        right: 50%;
+      }
+
+      &::before {
+        left: 50%;
+      }
+    }
+
+    .error {
+      position: absolute;
+      bottom: 0;
+      font-size: $font-small;
+      font-style: italic;
+      color: $danger;
+      visibility: hidden;
+      transition: all .2s ease-in-out;
+      opacity: 0;
+      &.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(20px);
+      }
+    }
+  }
+
+  .w-form-actions {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.w-btn {
+  display: inline-block;
+  padding: 8px 36px;
+  font-size: $font-large;
+  color: $white;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all .3s ease-out;
+
+  &--success {
+    background: $success-darker;
+  }
+
+  &:hover {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18),
+      0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  }
+}
