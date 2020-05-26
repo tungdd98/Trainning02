@@ -1,5 +1,4 @@
 import MS from '../helpers/index.js'
-import validator from './validator.js'
 
 const register = (function(){
   
@@ -13,8 +12,8 @@ const register = (function(){
     let data = {
       'username': {
         value: null,
-        rules: ['required', 'email'],
-        errors: ['Username is required', 'Vàng ăn cứt']
+        rules: ['required'],
+        errors: ['Username is required']
       },
       'register-email': {
         value: null,

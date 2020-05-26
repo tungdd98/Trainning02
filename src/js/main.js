@@ -1,6 +1,6 @@
-import validator from './validator.js'
 import MS from '../helpers/index.js'
-import register from './register.js'
+import Register from './register.js'
+import Api from './api.js'
 
 const form = document.forms['register']
 const btnTabs = MS.fn('.w-tabs a', true)
@@ -36,5 +36,5 @@ for (let btn of btnTabs) {
 
 form.addEventListener('submit', function(e) {
   e.preventDefault();
-  console.log(register.submit(this))
+  Api.register(Register.submit(this))
 })
