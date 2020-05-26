@@ -36,6 +36,5 @@ for (let btn of btnTabs) {
 
 form.addEventListener('submit', function(e) {
   e.preventDefault();
-  console.log('submit')
   console.log(register.submit(this))
 })

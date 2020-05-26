@@ -3,34 +3,63 @@ import validator from './validator.js'
 
 const register = (function(){
   
+  /**
+   * Submit form
+   * @param {*} form 
+   */
   const submit = function(form) {
-    const formData = new FormData()
+    let formData = new FormData()
     let isOk = true
-    const data = {
+    let data = {
       'username': {
         value: null,
-        validator: ['required']
+        rules: ['required', 'email'],
+        errors: ['Username is required', 'Vàng ăn cứt']
       },
       'register-email': {
         value: null,
-        validator: []
-      },
-      'register-re-email': {
-        value: null,
-        validator: []
+        rules: ['email'],
+        errors: ['Email invalidate']
       },
       'register-password': {
         value: null,
-        validator: []
+        rules: ['password'],
+        errors: ['Password invalidate']
       },
+    }
+    let confirm = {
       'register-re-password': {
         value: null,
-        validator: []
+        rules: ['confirm'],
+        error: 'Password confirm is not match',
+        match: 'register-password'
+      },
+      'register-re-email': {
+        value: null,
+        rules: ['confirm'],
+        error: 'Email confirm is not match',
+        match: 'register-email'
       },
     }
     
     Object.entries(data).forEach(([key, value]) => {
-      let isDone = MS.setValue(form[key].value.trim(), value)
+      let isDone = MS.setValue(form[key].value.trim(), value, form, key)
+
+      if (!isDone) {
+        form[key].nextElementSibling.classList.add('active')
+        isOk = false
+      } else {
+        if (form[key].nextElementSibling.classList.contains('active')) {
+          form[key].nextElementSibling.classList.remove('active')
+        }
+        formData.append(key, value.value)
+      }
+    })
+
+    Object.entries(confirm).forEach(([key, value]) => {
+      console.log(value.match)
+      let isDone = MS.confirmField(form[key].value.trim(), form[value.match].value.trim(), value, form, key)
+
       if (!isDone) {
         form[key].nextElementSibling.classList.add('active')
         isOk = false
