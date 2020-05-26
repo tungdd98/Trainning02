@@ -52,10 +52,24 @@ const api = (function () {
     return currentUser
   }
 
+  /**
+   * Logout
+   */
+  const logout = function() {
+    if(window.localStorage.getItem('user')) {
+      window.localStorage.removeItem('user')
+      
+      return true
+    }
+
+    return false
+  }
+
   return Object.freeze({
     register,
     login,
-    getCurrentUser
+    getCurrentUser,
+    logout
   })
 })()
 

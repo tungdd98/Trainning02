@@ -2,6 +2,7 @@ import MS from '../helpers/index.js'
 import Api from './modules/api.js'
 
 const btnToggleSideBar = MS.fn('.w-header__btn')
+const btnLogout = MS.fn('.w-js-logout')
 const sidebar = MS.fn('.w-aside')
 const header = MS.fn('.w-header')
 const main = MS.fn('.w-main')
@@ -15,6 +16,12 @@ btnToggleSideBar.addEventListener('click', function (e) {
     sidebar.classList.add('w-toggle-hidden')
     header.classList.add('w-toggle-hidden')
     main.classList.add('w-toggle-hidden')
+  }
+})
+
+btnLogout.addEventListener('click', function () {
+  if (Api.logout()) {
+    window.location.href = "auth.html"
   }
 })
 

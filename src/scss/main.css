@@ -58,7 +58,7 @@ button {
   min-height: 750px;
   position: relative;
   -webkit-box-shadow: 0px 0px 29px 9px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 29px 9px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 29px 9px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
@@ -333,7 +333,7 @@ button {
   top: 36.24px;
   position: absolute;
   -webkit-animation: loading linear 1s infinite;
-          animation: loading linear 1s infinite;
+  animation: loading linear 1s infinite;
   background: #1976D2;
   width: 9.06px;
   height: 18.12px;
@@ -346,7 +346,7 @@ button {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   -webkit-animation-delay: -0.9166666666666666s;
-          animation-delay: -0.9166666666666666s;
+  animation-delay: -0.9166666666666666s;
   background: #1976D2;
 }
 
@@ -354,7 +354,7 @@ button {
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);
   -webkit-animation-delay: -0.8333333333333334s;
-          animation-delay: -0.8333333333333334s;
+  animation-delay: -0.8333333333333334s;
   background: #1976D2;
 }
 
@@ -362,7 +362,7 @@ button {
   -webkit-transform: rotate(60deg);
           transform: rotate(60deg);
   -webkit-animation-delay: -0.75s;
-          animation-delay: -0.75s;
+  animation-delay: -0.75s;
   background: #1976D2;
 }
 
@@ -370,7 +370,7 @@ button {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   -webkit-animation-delay: -0.6666666666666666s;
-          animation-delay: -0.6666666666666666s;
+  animation-delay: -0.6666666666666666s;
   background: #1976D2;
 }
 
@@ -378,7 +378,7 @@ button {
   -webkit-transform: rotate(120deg);
           transform: rotate(120deg);
   -webkit-animation-delay: -0.5833333333333334s;
-          animation-delay: -0.5833333333333334s;
+  animation-delay: -0.5833333333333334s;
   background: #1976D2;
 }
 
@@ -386,7 +386,7 @@ button {
   -webkit-transform: rotate(150deg);
           transform: rotate(150deg);
   -webkit-animation-delay: -0.5s;
-          animation-delay: -0.5s;
+  animation-delay: -0.5s;
   background: #1976D2;
 }
 
@@ -394,7 +394,7 @@ button {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   -webkit-animation-delay: -0.4166666666666667s;
-          animation-delay: -0.4166666666666667s;
+  animation-delay: -0.4166666666666667s;
   background: #1976D2;
 }
 
@@ -402,7 +402,7 @@ button {
   -webkit-transform: rotate(210deg);
           transform: rotate(210deg);
   -webkit-animation-delay: -0.3333333333333333s;
-          animation-delay: -0.3333333333333333s;
+  animation-delay: -0.3333333333333333s;
   background: #1976D2;
 }
 
@@ -410,7 +410,7 @@ button {
   -webkit-transform: rotate(240deg);
           transform: rotate(240deg);
   -webkit-animation-delay: -0.25s;
-          animation-delay: -0.25s;
+  animation-delay: -0.25s;
   background: #1976D2;
 }
 
@@ -418,7 +418,7 @@ button {
   -webkit-transform: rotate(270deg);
           transform: rotate(270deg);
   -webkit-animation-delay: -0.16666666666666666s;
-          animation-delay: -0.16666666666666666s;
+  animation-delay: -0.16666666666666666s;
   background: #1976D2;
 }
 
@@ -426,7 +426,7 @@ button {
   -webkit-transform: rotate(300deg);
           transform: rotate(300deg);
   -webkit-animation-delay: -0.08333333333333333s;
-          animation-delay: -0.08333333333333333s;
+  animation-delay: -0.08333333333333333s;
   background: #1976D2;
 }
 
@@ -434,7 +434,7 @@ button {
   -webkit-transform: rotate(330deg);
           transform: rotate(330deg);
   -webkit-animation-delay: 0s;
-          animation-delay: 0s;
+  animation-delay: 0s;
   background: #1976D2;
 }
 
@@ -453,7 +453,7 @@ button {
   -webkit-transform: translateZ(0) scale(1);
           transform: translateZ(0) scale(1);
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-transform-origin: 0 0;
           transform-origin: 0 0;
 }

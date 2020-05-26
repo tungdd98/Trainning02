@@ -51,8 +51,6 @@ button {
   width: 400px;
   min-height: 750px;
   position: relative;
-  -webkit-box-shadow: 0px 0px 29px 9px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 0px 29px 9px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 29px 9px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
@@ -281,6 +279,16 @@ button {
   }
 }
 
+@-webkit-keyframes loading {
+  0% {
+    opacity: 1
+  }
+
+  100% {
+    opacity: 0
+  }
+}
+
 @keyframes loading {
   0% {
     opacity: 1
@@ -295,7 +303,8 @@ button {
   left: 70.97px;
   top: 36.24px;
   position: absolute;
-  animation: loading linear 1s infinite;
+  -webkit-animation: loading linear 1s infinite;
+          animation: loading linear 1s infinite;
   background: $primary;
   width: 9.06px;
   height: 18.12px;
@@ -305,73 +314,85 @@ button {
 
 .loading div:nth-child(1) {
   transform: rotate(0deg);
-  animation-delay: -0.9166666666666666s;
+  -webkit-animation-delay: -0.9166666666666666s;
+          animation-delay: -0.9166666666666666s;
   background: $primary;
 }
 
 .loading div:nth-child(2) {
   transform: rotate(30deg);
-  animation-delay: -0.8333333333333334s;
+  -webkit-animation-delay: -0.8333333333333334s;
+          animation-delay: -0.8333333333333334s;
   background: $primary;
 }
 
 .loading div:nth-child(3) {
   transform: rotate(60deg);
-  animation-delay: -0.75s;
+  -webkit-animation-delay: -0.75s;
+          animation-delay: -0.75s;
   background: $primary;
 }
 
 .loading div:nth-child(4) {
   transform: rotate(90deg);
-  animation-delay: -0.6666666666666666s;
+  -webkit-animation-delay: -0.6666666666666666s;
+          animation-delay: -0.6666666666666666s;
   background: $primary;
 }
 
 .loading div:nth-child(5) {
   transform: rotate(120deg);
-  animation-delay: -0.5833333333333334s;
+  -webkit-animation-delay: -0.5833333333333334s;
+          animation-delay: -0.5833333333333334s;
   background: $primary;
 }
 
 .loading div:nth-child(6) {
   transform: rotate(150deg);
-  animation-delay: -0.5s;
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
   background: $primary;
 }
 
 .loading div:nth-child(7) {
   transform: rotate(180deg);
-  animation-delay: -0.4166666666666667s;
+  -webkit-animation-delay: -0.4166666666666667s;
+          animation-delay: -0.4166666666666667s;
   background: $primary;
 }
 
 .loading div:nth-child(8) {
   transform: rotate(210deg);
-  animation-delay: -0.3333333333333333s;
+  -webkit-animation-delay: -0.3333333333333333s;
+          animation-delay: -0.3333333333333333s;
   background: $primary;
 }
 
 .loading div:nth-child(9) {
   transform: rotate(240deg);
-  animation-delay: -0.25s;
+  -webkit-animation-delay: -0.25s;
+          animation-delay: -0.25s;
   background: $primary;
 }
 
 .loading div:nth-child(10) {
   transform: rotate(270deg);
-  animation-delay: -0.16666666666666666s;
+  -webkit-animation-delay: -0.16666666666666666s;
+          animation-delay: -0.16666666666666666s;
   background: $primary;
 }
 
 .loading div:nth-child(11) {
   transform: rotate(300deg);
-  animation-delay: -0.08333333333333333s;
+  -webkit-animation-delay: -0.08333333333333333s;
+          animation-delay: -0.08333333333333333s;
   background: $primary;
 }
 
 .loading div:nth-child(12) {
   transform: rotate(330deg);
-  animation-delay: 0s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
   background: $primary;
 }
 
@@ -388,7 +409,8 @@ button {
   height: 100%;
   position: relative;
   transform: translateZ(0) scale(1);
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   transform-origin: 0 0;
 }
 
