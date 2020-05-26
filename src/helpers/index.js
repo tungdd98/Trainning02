@@ -1,4 +1,4 @@
-import validator from '../js/validator.js'
+import validator from '../js/modules/validator.js'
 
 const helpers = (function() {
   /**
@@ -43,10 +43,54 @@ const helpers = (function() {
     return false
   }
 
+  /**
+   * 
+   * @param {*} form 
+   * @param {*} fields 
+   */
+  const resetForm = function(form, fields) {
+    fields.forEach(field => form[field].value = '')
+  }
+
+  /**
+   * 
+   * @param {*} messenger 
+   * @param {*} status 
+   */
+  const showNotification = function(messenger = '', status = 'success', time = 1000) {
+    const element = document.createElement('div')
+
+    element.classList.add('w-notification', `w-notification--${status}`, 'show')
+    setTimeout(() => {
+      if(element.classList.contains('show')) {
+        element.classList.remove('show')
+      }
+    }, time);
+    element.innerHTML = messenger
+    document.body.appendChild(element)
+  }
+
+  /**
+   * 
+   * @param {*} status 
+   */
+  const showLoading = function(status = false) {
+    if(status) {
+      if(!fn('.w-loading').classList.contains('show')) {
+        fn('.w-loading').classList.add('show')
+      } else {
+        fn('.w-loading').classList.remove('show')
+      }
+    }
+  }
+
   return Object.freeze({
     fn,
     setValue,
     confirmField,
+    resetForm,
+    showNotification,
+    showLoading,
   })
 })()
 

@@ -1,12 +1,53 @@
-import MS from '../helpers/index.js'
+import MS from '../../helpers/index.js'
 
-const register = (function(){
-  
+const auth = (function () {
+
   /**
-   * Submit form
+   * 
    * @param {*} form 
    */
-  const submit = function(form) {
+  const submitFormLogin = function (form) {
+    let formData = new FormData()
+    let isOk = true
+    let data = {
+      'login-email': {
+        value: null,
+        rules: ['required', 'email'],
+        errors: ['Email is required', 'Email invalidate']
+      },
+      'login-password': {
+        value: null,
+        rules: ['required'],
+        errors: ['Password is required']
+      },
+    }
+
+    Object.entries(data).forEach(([key, value]) => {
+      let isDone = MS.setValue(form[key].value.trim(), value, form, key)
+
+      if (!isDone) {
+        form[key].nextElementSibling.classList.add('active')
+        isOk = false
+      } else {
+        if (form[key].nextElementSibling.classList.contains('active')) {
+          form[key].nextElementSibling.classList.remove('active')
+        }
+        formData.append(key, value.value)
+      }
+    })
+
+    if (isOk) {
+      return formData
+    }
+
+    return false
+  }
+
+  /**
+   * 
+   * @param {*} form 
+   */
+  const submitFormRegister = function (form) {
     let formData = new FormData()
     let isOk = true
     let data = {
@@ -40,7 +81,7 @@ const register = (function(){
         match: 'register-email'
       },
     }
-    
+
     Object.entries(data).forEach(([key, value]) => {
       let isDone = MS.setValue(form[key].value.trim(), value, form, key)
 
@@ -56,7 +97,6 @@ const register = (function(){
     })
 
     Object.entries(confirm).forEach(([key, value]) => {
-      console.log(value.match)
       let isDone = MS.confirmField(form[key].value.trim(), form[value.match].value.trim(), value, form, key)
 
       if (!isDone) {
@@ -69,8 +109,8 @@ const register = (function(){
         formData.append(key, value.value)
       }
     })
-    
-    if(isOk) {
+
+    if (isOk) {
       return formData
     }
 
@@ -78,8 +118,9 @@ const register = (function(){
   }
 
   return Object.freeze({
-    submit
+    submitFormLogin,
+    submitFormRegister
   })
 })()
 
-export default register
+export default auth
