@@ -1,18 +1,13 @@
+import '../scss/main.css'
 import MS from '../helpers/index.js'
 import Auth from './modules/auth.js'
 import Api from './modules/api.js'
 
-const formRegister = document.forms['register']
-const formLogin = document.forms['login']
-const btnTabs = MS.fn('.w-tabs a', true)
-const tabsContent = MS.fn('.w-tabs-content', true)
-
-
-for (let btn of btnTabs) {
+for (let btn of MS.fn('.w-tabs a', true)) {
   btn.addEventListener('click', function () {
     const target = this.getAttribute('data-tab')
 
-    btnTabs.forEach((btn, key) => {
+    MS.fn('.w-tabs a', true).forEach((btn, key) => {
       if (btn.classList.contains('active')) {
         btn.classList.remove('active')
       }
@@ -22,7 +17,7 @@ for (let btn of btnTabs) {
       this.classList.add('active')
     }
 
-    tabsContent.forEach((tab, key) => {
+    MS.fn('.w-tabs-content', true).forEach((tab, key) => {
       const id = tab.getAttribute('id')
 
       if (id === target) {
@@ -36,16 +31,19 @@ for (let btn of btnTabs) {
   })
 }
 
-formRegister.addEventListener('submit', function (e) {
+document.forms['register'].addEventListener('submit', function (e) {
   e.preventDefault();
   if (Api.register(Auth.submitFormRegister(this))) {
-    const size = btnTabs.length
+    const size = MS.fn('.w-tabs a', true).length
+    const user = Api.getUserRegister()
 
+    document.forms['login']['login-email'].value = user.email
+    document.forms['login']['login-password'].value = user.password
     MS.showNotification('Đăng ký thành công')
     MS.resetForm(this, ['username', 'register-email', 'register-re-email', 'register-password', 'register-re-password'])
     for (let i = 0; i < size; i++) {
-      const btn = btnTabs[i]
-      const tab = tabsContent[i]
+      const btn = MS.fn('.w-tabs a', true)[i]
+      const tab = MS.fn('.w-tabs-content', true)[i]
 
       btn.classList.contains('active') ? btn.classList.remove('active') : btn.classList.add('active')
       tab.classList.contains('active') ? tab.classList.remove('active') : tab.classList.add('active')
@@ -53,7 +51,7 @@ formRegister.addEventListener('submit', function (e) {
   }
 })
 
-formLogin.addEventListener('submit', function (e) {
+document.forms['login'].addEventListener('submit', function (e) {
   e.preventDefault();
   if (Api.login(Auth.submitFormLogin(this))) {
     MS.showLoading(true)

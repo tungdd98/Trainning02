@@ -26,6 +26,20 @@ const validator = (function(){
   }
 
   /**
+   * Username validate: k cho phép nhập số, ký tự đặc biệt
+   * @param {*} value 
+   */
+  const username = function(value) {
+    const regex = /^[^0-9\~\!\@\#\$\%\^\&\*\(\)\-\_\+\=\,\.\/]*$/g
+
+    if(regex.test(value)) {
+      return true
+    }
+
+    return false
+  }
+
+  /**
    * Password validate
    * @param {*} value 
    */
@@ -76,7 +90,8 @@ const validator = (function(){
     email,
     password,
     confirm,
-    validate
+    username,
+    validate,
   })
 })()
 

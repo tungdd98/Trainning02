@@ -1,6 +1,7 @@
 const api = (function () {
   let users = JSON.parse(window.localStorage.getItem('users')) || []
   let currentUser = JSON.parse(window.localStorage.getItem('user')) || null
+  let userRegister = null
 
   /**
    * 
@@ -16,6 +17,7 @@ const api = (function () {
       }
 
       users.push(user)
+      userRegister = user
       window.localStorage.setItem('users', JSON.stringify(users))
       
       return true
@@ -53,6 +55,17 @@ const api = (function () {
   }
 
   /**
+   * Lấy thông tin user vừa đăng ký thành công
+   * @param {} user 
+   */
+  const getUserRegister = function() {
+    return {
+      email: userRegister.email,
+      password: userRegister.password
+    }
+  }
+
+  /**
    * Logout
    */
   const logout = function() {
@@ -69,6 +82,7 @@ const api = (function () {
     register,
     login,
     getCurrentUser,
+    getUserRegister,
     logout
   })
 })()

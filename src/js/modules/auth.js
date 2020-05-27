@@ -53,8 +53,8 @@ const auth = (function () {
     let data = {
       'username': {
         value: null,
-        rules: ['required'],
-        errors: ['Username is required']
+        rules: ['required', 'username'],
+        errors: ['Username is required', 'Useename do not enter numbers or special characters']
       },
       'register-email': {
         value: null,
