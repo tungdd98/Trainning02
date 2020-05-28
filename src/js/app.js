@@ -1,4 +1,4 @@
-import '../scss/main.css'
+import '../scss/main.scss'
 import MS from '../helpers/index.js'
 import Api from './modules/api.js'
 
